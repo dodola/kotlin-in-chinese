@@ -233,8 +233,8 @@ Sample.foo()
 函数可以有泛型参数，样式是在函数后跟上尖括号。
 
 ```kotlin
-fun sigletonArray<T>(item: T): Array<T> {
-	return Array<T>(1, {item})
+fun <T> singletonList(item: T): List<T> {
+    // ...
 }
 ```
 
@@ -271,4 +271,4 @@ private fun findFixPoint(): Double {
 }
 ```
 
-使用 `tailrec` 修饰符必须在最后一个操作中调用自己。在递归调用代码后面是不允许有其它代码的，并且也不可以在 try/catch/finall 块中进行使用。当前的尾递归只在 JVM 的后端中可以用
+使用 `tailrec` 修饰符必须在最后一个操作中调用自己。在递归调用代码后面是不允许有其它代码的，并且也不可以在 try/catch/finally 块中进行使用。当前的尾递归只在 JVM 的后端中可以用
